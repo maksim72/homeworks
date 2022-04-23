@@ -1,6 +1,8 @@
+import java.util.Arrays;
+
 public class MainApp {
     public static void main(String[] args) {
-        printThreeWords();
+        /*printThreeWords();
         checkSumSign();
         printColor();
         compareNumbers();
@@ -8,7 +10,13 @@ public class MainApp {
         challenge2_2(5);
         System.out.println(challenge2_3(4));
         challenge2_4("psk", 5);
-        System.out.println(challenge2_5(400));
+        System.out.println(challenge2_5(400));*/
+        challenge3_1();
+        challenge3_2();
+        challenge3_3();
+        challenge3_4();
+        challenge3_5(7, 10);
+        challenge3_6();
     }
 
     public static void printThreeWords(){
@@ -80,4 +88,76 @@ public class MainApp {
         } return false;
     }
 
+    public static void challenge3_1(){
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] == 1){
+                arr[i] = 0;
+            } else {
+                arr[i] = 1;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void challenge3_2(){
+        int[] arr = new int[100];
+        for (int i = 0; i < arr.length; i++){
+            arr[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void challenge3_3(){
+        int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] < 6){
+                arr[i] = arr[i] * 2;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void challenge3_4(){
+        int[][] arr = new int[4][4];
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr[i].length; j++){
+                if (arr[i] == arr[j]){
+                    arr[i][j] = 1;
+                }
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void challenge3_5(int len, int initialValue){
+        int[] arr = new int[len];
+        for (int i = 0; i < len; i++){
+            arr[i] = initialValue;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void challenge3_6(){
+        int[] arr = {3, 4, 6, 1, 10, 15, 100, 55, 0};
+        int max = arr[0];
+        int min = arr[1];
+        for (int i : arr){
+            if (i > max){
+                max = i;
+            }
+        }
+        for (int j : arr){
+            if (j < min){
+                min = j;
+            }
+        }
+        System.out.println("Минимальное число = " + min);
+        System.out.println("Максимальное число = " + max);
+    }
+
+
+
 }
+
