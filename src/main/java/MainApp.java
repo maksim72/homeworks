@@ -4,6 +4,11 @@ public class MainApp {
         checkSumSign();
         printColor();
         compareNumbers();
+        System.out.println(challenge2_1(3, 14));
+        challenge2_2(5);
+        System.out.println(challenge2_3(4));
+        challenge2_4("psk", 5);
+        System.out.println(challenge2_5(400));
     }
 
     public static void printThreeWords(){
@@ -42,6 +47,37 @@ public class MainApp {
         } else {
             System.out.println("a < b");
         }
+    }
+
+    public static boolean challenge2_1(int a, int b){
+        int sum = a + b;
+        if (sum >= 10 && sum <= 20){
+            return true;
+        } return false;
+    }
+
+    public static void challenge2_2(int a){
+        if (a >= 0){
+            System.out.println("Число положительное");
+        } else System.out.println("Число отрицательное");
+    }
+
+    public static boolean challenge2_3(int a) {
+        if (a < 0){
+            return true;
+        } return false;
+    }
+
+    public static void challenge2_4(String str, int a){
+        for (int i = 0; i < a; i++){
+            System.out.println(str);
+        }
+    }
+
+    public static boolean challenge2_5(int a){
+        if ((a % 4 == 0) && (a % 100 != 0) || (a % 400 == 0)){
+            return true;
+        } return false;
     }
 
 }
